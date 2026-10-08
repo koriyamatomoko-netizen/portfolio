@@ -1,0 +1,469 @@
+@charset "utf-8";
+
+:root {
+--font-family-main: "Josefin Sans", sans-serif;
+--font-family-sans: "Zen Kaku Gothic New", sans-serif;
+
+--font-size-main: 16px;
+--font-size-small: 14px;
+--font-size-h1: 120px;
+--font-size-h2: 65px;
+--font-size-h3: 24px;
+
+--line-height-main: 2;
+--line-height-tight: 1;
+--line-height-wide: 3;
+
+--color-main: #fff;
+--color-sub: #FFF9F2;
+--color-accent: #44B395;
+--color-black: #616161;
+
+--bg-color-main: #FFF9F2;
+
+}
+
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    background: url(../images/work-top.jpg);
+    
+}
+
+
+
+/* ********************************************header * * *********************************************/
+
+
+header {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+    
+
+
+header h1 {
+    position: absolute;
+    font-family: var(--font-family-main);
+    font-size: clamp(32px, 8.333vw, 120px);
+    color: var(--color-main);
+    margin: 115px 0 0 144px ;
+    z-index: 2;
+}
+
+/******************************ぱんくず******************************/
+
+.breadcrumb {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.breadcrumb ol {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumb ol li {
+    font-family: var(--font-family-main);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-main);
+}
+
+.breadcrumb ol li a {
+    font-family: var(--font-family-main);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-main);
+}
+
+/* 「>」を追加 */
+.breadcrumb ol li:not(:last-child)::after {
+    content: ">";
+    margin-left: 12px;
+    color: var(--color-main);
+}
+
+.breadcrumb li[aria-current="page"] {
+    font-size: 16px;
+}
+
+
+/************ ヘッダーの文字のopacity設定 ************/
+
+header h1 {
+    animation: fadeIn 6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* * ********************************************飛行機 * * ******************************************** */
+
+.flight1 {
+    position: absolute;
+    top: 90%;
+    left: -100px;
+    transform: translateY(-50%);
+    animation: fly 8s linear infinite;
+}
+
+.airplane1 {
+    width: 100px;
+    display: block;
+}
+
+
+.cloud {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.cloud span {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+
+.cloud span:nth-child(1) {
+    animation: disappear 2s infinite;
+}
+
+.cloud span:nth-child(2) {
+    animation: disappear 2s infinite 0.2s;
+}
+
+.cloud span:nth-child(3) {
+    animation: disappear 2s infinite 0.4s;
+}
+
+.cloud span:nth-child(4) {
+    animation: disappear 2s infinite 0.6s;
+}
+
+.cloud span:nth-child(5) {
+    animation: disappear 2s infinite 0.8s;
+}
+
+.cloud span:nth-child(6) {
+    animation: disappear 2s infinite 1s;
+}
+
+.cloud span:nth-child(7) {
+    animation: disappear 2s infinite 1.2s;
+}
+
+.cloud span:nth-child(8) {
+    animation: disappear 2s infinite 1.4s;
+}
+
+
+@keyframes disappear {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+@keyframes fly {
+    0% {
+        left: -100px;
+        transform: translateY(-50%) rotate(0deg);
+    }
+
+    50% {
+        left: 50%;
+        transform: translateY(-70%) rotate(5deg);
+    }
+
+    100% {
+        left: calc(100% + 100px);
+        transform: translateY(-50%) rotate(0deg);
+    }
+}
+
+
+
+/********************************************************** main ********************************************************* */
+
+main {
+    width: 1356px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/****** WORKS ***** */
+
+
+.works {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/************************* .category-area *********************** */
+
+.category-area {
+    margin-top: 88px;
+    margin-left: 42px;
+    width: 390px;
+}
+
+.category-area h2 {
+    margin: 42px 0;
+    padding: 20px;
+    font-size: 32px;
+    font-family: var(--font-family-main);
+    color: var(--color-main);
+}
+
+
+.category > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category > ul > li {
+    margin-bottom: 20px;
+}
+
+.category a {
+    text-decoration: none;
+    color: var(--color-main);
+}
+
+/* 子カテゴリー */
+.sub-category {
+    list-style: none;
+    padding: 10px 0 0 20px;
+    margin: 0;  
+}
+
+.sub-category li {
+    margin-bottom: 8px;
+}
+
+.sub-category li::before {
+    content: "－";
+    display: inline;
+    color: var(--color-main);
+
+}
+
+.sub-category li a {
+    font-size: 12px;
+    font-family: var(--font-family-main);
+}
+
+.sub-category .line a {
+    position: relative;
+}
+
+.sub-category .line a::after {
+    content:"";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--bg-color-main);
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform .35s;
+}
+
+.line a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+
+
+/************************* .work-list *********************** */
+
+.work-list {
+    margin: 60px 42px;
+}
+
+
+
+.work-list h3 {
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-h3);
+    color: var(--color-main);
+    padding: 40px 40px 20px 40px;
+
+}
+
+.work-item {
+    display: block;
+}
+
+.work-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+}
+
+
+.graphic-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+}
+
+.web-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+}
+
+.other-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+}
+
+
+.anotherTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.another-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    
+}
+
+.work-item.is-hover img {
+    transform: scale(1.2);
+}
+
+.work-item:hover img {
+    opacity: 0.5;
+}
+
+
+
+
+/* =========================.contact ========================= */
+
+.contact {
+    position: relative;
+    z-index: 3;
+    background: transparent;
+    color: var(--color-main);
+    margin-top: 20px;
+    font-family: var(--font-family-main);
+}
+
+.contact h2 {
+    padding: 20px;
+    color: var(--color-main);
+    font-size: var(--font-size-h2);
+    font-family: var(--font-family-main);
+    display: flex;
+    justify-content: center;
+}
+
+
+.contact p {
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-family-sans);
+
+}
+
+.contact a {
+    text-decoration: none;
+    color: var(--color-main);
+}
+
+
+/****************************** footer ***************************** */
+
+footer {
+    height: 240px;
+}
+
+.footer-inner {
+    position: relative;
+    height: 100%;
+
+}
+
+.footer-nav {
+    position: absolute;
+    right: 72px;
+    bottom: 45px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    gap: 30px;
+    font-family: var(--font-family-sans);
+}
+
+.footer-nav ul {
+    display: flex;
+}
+
+.footer-nav a {
+    display: block;
+    font-family: var(--font-family-main);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-main);
+    gap: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
